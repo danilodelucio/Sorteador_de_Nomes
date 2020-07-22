@@ -64,7 +64,7 @@ while True:
                             try:
                                 print()
                                 linhas()
-                                cont = str(input("Deseja sortear outros nomes? [S/N] ")).upper().strip()
+                                cont = str(input("Deseja fazer outro sorteio? [S/N] ")).upper().strip()
 
                                 if cont == "N" or cont == "S":
                                     linhas()
