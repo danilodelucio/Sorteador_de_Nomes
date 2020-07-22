@@ -4,15 +4,31 @@ import random
 def linhas():
     print("-" * 70)
 
+
+def msgError():
+    print("ERRO! POR FAVOR DIGITE UM VALOR VÁLIDO!")
+
 # TÍTULO
 print("SORTEADOR DE NOMES PARA FORMAÇÃO DE TIMES")
 print()
 
 # PRIMEIRO NOME
-nome = input("Digite um nome: ").title().strip()
-lista_nomes = []
-lista_nomes.append(nome)
-linhas()
+while True:
+    try:
+        nome = input("Digite um nome: ").title().strip()
+        lista_nomes = []
+        lista_nomes.append(nome)
+        linhas()
+
+        if nome != "":
+            break
+
+        else:
+            msgError()
+            print()
+
+    except:
+        msgError()
 
 while True:
     try:
@@ -26,12 +42,12 @@ while True:
 
         if add_nome == "N":
             # EMBARALHANDO OS NOMES E EXIBINDO NA TELA
-            random.shuffle(lista_nomes)
             print()
             print("NOMES REGISTRADOS")
             for c in lista_nomes:
                 print(c)
             print()
+            random.shuffle(lista_nomes)
             print(f"Total de {len(lista_nomes)} pessoas registradas.")
             print()
 
@@ -51,10 +67,10 @@ while True:
             break
 
         else:
-            print("ERRO!2")
+            msgError()
 
     except:
-        print("ERRO!")
+        msgError()
 
 print()
 print("FIM")
